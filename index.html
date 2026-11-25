@@ -1,0 +1,337 @@
+<!-- =====================================================
+     DOCUMENTO HTML: INVITACIÓN DE BODA
+     Define la estructura y el contenido de la página.
+     ===================================================== -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- CONFIGURACIÓN GENERAL: idioma, codificación, vista móvil y metadatos. -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#F3EEE7">
+  <meta name="description" content="Adriana & Ricardo celebran el comienzo de su para siempre. Acompáñanos en nuestra boda.">
+  <title>Adriana & Ricardo | Nuestra boda</title>
+  <!-- TIPOGRAFÍAS: se cargan desde Google Fonts. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <!-- HOJA DE ESTILOS PRINCIPAL: contiene la apariencia visual de la invitación. -->
+  <link rel="stylesheet" href="stylos.css">
+</head>
+<body>
+  <!-- =====================================================
+       BOTÓN DE MÚSICA Y AUDIO
+       Permite activar o pausar la canción de la invitación.
+       La lógica está en script.js.
+       ===================================================== -->
+
+  <button class="music-toggle" id="musicToggle" type="button" aria-pressed="false" aria-label="Activar música">
+    <span class="music-icon" aria-hidden="true">♫</span>
+    <span id="musicLabel">Escuchar canción</span>
+  </button>
+
+  <audio id="weddingMusic" src="assets/cancion.mp3" preload="none" loop></audio>
+
+  <!-- =====================================================
+       PORTADA / INTRODUCCIÓN
+       Primera pantalla que ve el visitante antes de abrir el sobre.
+       ===================================================== -->
+  <section class="intro" id="intro" aria-label="Abrir invitación">
+    <div class="intro-glow"></div>
+
+    <div class="intro-copy reveal">
+      <p class="eyebrow"></p>
+      <h1>Adriana <i>&</i> Ricardo</h1>
+      <p class="intro-date">03 · ENERO · 2027 <span>—</span> CHIMICHAGUA, CESAR</p>
+    </div>
+
+    <!-- SOBRE INTERACTIVO: contiene la carta de vista previa, el sobre y el sello. -->
+    <div class="envelope-stage">
+      <button class="envelope-button" id="openInvitation" type="button" aria-label="Abrir el sobre de invitación">
+
+        <!-- VISTA PREVIA DE LA CARTA
+             Esta maqueta aparece asociada a la animación de apertura del sobre.
+             Sus secciones anticipan el contenido de la invitación completa.
+             Se conserva separada del contenido principal porque cumple otra función visual.
+        -->
+        <div class="page-sketch" id="pageSketch" aria-hidden="true">
+          <div class="sketch-sheet">
+
+            <!-- Vista previa: portada con fotografía y nombres. -->
+            <section class="sketch-hero">
+              <img src="assets/foto-1.webp" alt="" class="sketch-cover-photo">
+              <div class="sketch-cover-shade"></div>
+              <div class="sketch-cover-copy">
+                <span class="sketch-eyebrow">NUESTRA HISTORIA CONTINÚA</span>
+                <div class="sketch-couple">Adriana <i>&</i> Ricardo</div>
+                <span class="sketch-divider"></span>
+                <span class="sketch-small-copy">
+  <br>Con Dios como guía y el amor como promesa,
+  <br>queremos compartir contigo el comienzo de nuestro para siempre.
+</span>
+                <span class="sketch-hero-date">03 · 01 · 2027</span>
+              </div>
+            </section>
+
+            <!-- Vista previa: mensaje de bienvenida. -->
+            <section class="sketch-welcome">
+              <span class="sketch-eyebrow">UNA CELEBRACIÓN DEL AMOR</span>
+              <strong>Hay momentos que<br>merecen ser eternos.</strong>
+              <span class="sketch-paragraph"></span>
+              <span class="sketch-paragraph short"></span>
+              <em>Con cariño, Adriana & Ricardo</em>
+            </section>
+
+            <!-- Vista previa: fecha, ubicación y contador decorativo. -->
+            <section class="sketch-date-block">
+              <span class="sketch-eyebrow">RESERVA ESTA FECHA</span>
+              <strong>¡Nos casamos!</strong>
+              <span class="sketch-big-date">03 · 01 · 2027</span>
+              <span class="sketch-tiny">CHIMICHAGUA · CESAR</span>
+              <div class="sketch-count">
+                <b>40</b><b>12</b><b>35</b><b>08</b>
+              </div>
+            </section>
+
+            <!-- Vista previa: pequeño collage de fotografías. -->
+            <section class="sketch-gallery">
+              <span class="sketch-eyebrow">PEQUEÑOS INSTANTES, GRANDES RECUERDOS</span>
+              <strong>Un poquito de<br>nuestra historia</strong>
+              <div class="sketch-photo-stack">
+                <img src="assets/foto-2.webp" alt="">
+                <img src="assets/foto-3.webp" alt="">
+                <img src="assets/foto-4.webp" alt="">
+              </div>
+            </section>
+
+            <!-- Vista previa: resumen de los momentos del evento. -->
+            <section class="sketch-events">
+              <span class="sketch-eyebrow">NOS ENCANTARÁ COMPARTIR CADA MOMENTO</span>
+              <strong>El gran día</strong>
+              <div>
+                <span>CEREMONIA RELIGIOSA</span>
+                <span>RECEPCIÓN</span>
+              </div>
+            </section>
+
+            <!-- PALETA DE LOS DIEZ COLORES -->
+            <section class="sketch-dress">
+              <strong>Una paleta para celebrar</strong>
+              <div class="sketch-swatches">
+                <i style="--swatch:#F2A64A" title="Caramelo"></i>
+                <i style="--swatch:#B94F0B" title="Cobre"></i>
+                <i style="--swatch:#F4A04A" title="Ámbar"></i>
+                <i style="--swatch:#873407" title="Óxido"></i>
+                <i style="--swatch:#873D12" title="Café"></i>
+                <i style="--swatch:#A94C12" title="Terracota"></i>
+                <i style="--swatch:#681B08" title="Caoba"></i>
+                <i style="--swatch:#542407" title="Chocolate"></i>
+                <i style="--swatch:#D16B20" title="Naranja"></i>
+                <i style="--swatch:#B5A28D" title="Taupe"></i>
+              </div>
+            </section>
+
+            <!-- Vista previa: llamada a confirmar asistencia. -->
+            <section class="sketch-rsvp">
+              <strong>¿Nos acompañas?</strong>
+              <span>CONFIRMAR ASISTENCIA</span>
+            </section>
+
+            <!-- Vista previa: cierre de la carta. -->
+            <footer class="sketch-footer">
+              Adriana <i>&</i> Ricardo
+              <small>03 · 01 · 2027</small>
+            </footer>
+
+          </div>
+        </div>
+
+        <!-- Imagen principal del sobre y sello de lacre. Sus IDs son utilizados por script.js. -->
+        <img class="envelope-image" id="envelopeImage" src="assets/sobre-taupe.png" alt="Sobre de invitación color taupe">
+        <img class="wax-seal" id="waxSeal" src="assets/sello-r.png" alt="Sello de lacre con la R caligráfica">
+
+      </button>
+
+      <!-- Instrucción para indicar cómo abrir la invitación. -->
+      <p class="open-hint" id="openHint">TOCA EL SELLO PARA ABRIR</p>
+    </div>
+    <p class="intro-foot">EL AMOR NUNCA DEJA DE SER</p>
+    <p class="intro-verse">1 Corintios 13:4-8</p>
+  </section>
+
+  <!-- =====================================================
+       INVITACIÓN COMPLETA
+       Permanece oculta inicialmente (hidden) y se muestra al abrir el sobre.
+       ===================================================== -->
+  <main id="invitation" class="invitation" hidden>
+
+    <!-- PORTADA PRINCIPAL: fotografía, nombres, fecha y navegación hacia abajo. -->
+    <section class="hero section-pad">
+      <div class="hero-photo" role="img" aria-label="Adriana y Ricardo abrazados al atardecer"></div>
+      <div class="hero-overlay"></div>
+
+      <div class="hero-content reveal">
+        <p class="eyebrow light">NUESTRA HISTORIA CONTINÚA</p>
+        <h2>Adriana <i>&</i><br>Ricardo</h2>
+        <span class="fine-rule"></span>
+        <p>Con Dios como guía y el amor como promesa,<br>queremos compartir contigo el comienzo de nuestro para siempre.</p>
+        <p class="hero-date">03 · 01 · 2027</p>
+      </div>
+
+      <a class="scroll-cue" href="#bienvenida" aria-label="Desplazarse hacia la invitación">↓</a>
+    </section>
+
+    <!-- BIENVENIDA: mensaje dirigido a los invitados. -->
+    <section class="welcome section-pad" id="bienvenida">
+      <p class="eyebrow">UNA CELEBRACIÓN DEL AMOR</p>
+      <h2>Hay momentos que<br>merecen ser eternos.</h2>
+      <span class="fine-rule"></span>
+      <p class="body-copy">Y no imaginamos vivir este momento sin las personas que han sido parte de nuestra historia. Queremos celebrar contigo, abrazarte y guardar juntos un recuerdo inolvidable.</p>
+      <p class="signature">Con cariño, Adriana & Ricardo</p>
+    </section>
+
+    <!-- FECHA Y CUENTA REGRESIVA: muestra la fecha de la boda y el contador dinámico. -->
+    <section class="date-section section-pad">
+      <p class="eyebrow light">RESERVA ESTA FECHA</p>
+      <h2>¡Nos casamos!</h2>
+      <p class="date-large">03 <span>·</span> 01 <span>·</span> 2027</p>
+      <p class="location-line">CHIMICHAGUA · CESAR</p>
+      <figure class="photo"><img src="assets/foto-6.webp" alt="Sus manos al atardecer" loading="lazy"></figure>
+
+      <div class="countdown" aria-label="Cuenta regresiva">
+        <div><strong id="days">—</strong><span>DÍAS</span></div>
+        <div><strong id="hours">—</strong><span>HORAS</span></div>
+        <div><strong id="minutes">—</strong><span>MINUTOS</span></div>
+        <div><strong id="seconds">—</strong><span>SEGUNDOS</span></div>
+      </div>
+    </section>
+
+    <!-- GALERÍA: fotografías que cuentan parte de la historia de la pareja. -->
+    <section class="story-gallery section-pad">
+      <div class="section-heading">
+        <p class="eyebrow">RECUERDOS QUE ATESORAMOS</p>
+        <h2>Todo tiene su tiempo, y todo lo que se quiere debajo del cielo tiene su hora.</h2>
+        <p class="verse-reference">Eclesiastés 3:1</p>
+        
+      </div>
+
+      <div class="photo-grid">
+        <figure class="photo photo-tall"><img src="assets/foto-1.webp" alt="Adriana y Ricardo abrazados" loading="lazy"></figure>
+        <figure class="photo"><img src="assets/foto-2.webp" alt="La pareja disfrutando de un abrazo" loading="lazy"></figure>
+        <figure class="photo"><img src="assets/foto-5.webp" alt="Adriana y Ricardo juntos" loading="lazy"></figure>
+        <figure class="photo photo-wide"><img src="assets/foto-4.webp" alt="Un detalle de sus manos entrelazadas" loading="lazy"></figure>
+        <figure class="photo"><img src="assets/foto-7.webp" alt="Sus manos al atardecer" loading="lazy"></figure>
+      </div>
+    </section>
+
+
+<!-- =====================================================
+     EVENTOS DEL DÍA
+     Información de la ceremonia y la recepción.
+     ===================================================== -->
+<section class="events section-pad">
+  <p class="eyebrow"></p>
+  <h2>El gran día</h2>
+
+  <div class="event-grid">
+
+    <!-- TARJETA 1: CEREMONIA -->
+    <article class="event-card">
+      <span class="event-number">01</span>
+      <p class="eyebrow">3:00 P. M.</p>
+      <h3>Ceremonia religiosa</h3>
+      <p>Parroquia Inmaculada Concepción</p>
+      <p>Chimichagua, Cesar</p>
+    </article>
+
+    <!-- FOTOGRAFÍA DE CHIMICHAGUA -->
+    <figure class="event-photo">
+      <img
+        src="assets/iglesia.png"
+        alt="Iglesia y plaza principal de Chimichagua, Cesar"
+      >
+    </figure>
+
+    <!-- TARJETA 2: RECEPCIÓN -->
+    <article class="event-card">
+      <span class="event-number">02</span>
+      <p class="eyebrow">6:00 P. M.</p>
+      <h3>Recepción</h3>
+      <p>Remanganagua</p>
+      <p>Chimichagua, Cesar</p>
+    </article>
+
+  </div>
+</section>
+
+
+    <!-- VESTUARIO: PALETA DEFINITIVA DE DIEZ COLORES -->
+    <!-- CÓDIGO DE VESTUARIO: muestra la paleta de diez colores sugeridos. -->
+    <section class="dresscode section-pad">
+      <p class="eyebrow">CÓDIGO DE VESTUARIO</p>
+      <h2>Nuestra inspiración de color.</h2>
+      <p>Te invitamos a acompañarnos con tonos cálidos y naturales.</p>
+
+      <div class="swatches" aria-label="Paleta de diez colores sugeridos">
+        <span style="--swatch:#F2A64A" title="Caramelo"></span>
+        <span style="--swatch:#B94F0B" title="Cobre"></span>
+        <span style="--swatch:#F4A04A" title="Ámbar"></span>
+        <span style="--swatch:#873407" title="Óxido"></span>
+        <span style="--swatch:#873D12" title="Café"></span>
+        <span style="--swatch:#A94C12" title="Terracota"></span>
+        <span style="--swatch:#681B08" title="Caoba"></span>
+        <span style="--swatch:#542407" title="Chocolate"></span>
+        <span style="--swatch:#D16B20" title="Naranja"></span>
+        <span style="--swatch:#B5A28D" title="Taupe"></span>
+      </div>
+    </section>
+
+    <!-- REGALOS: información sobre la lluvia de sobres. -->
+    <section class="gift-section section-pad">
+      <p class="eyebrow light">REGALOS</p>
+      <h2>Lluvia de sobres</h2>
+      <span class="fine-rule light-rule"></span>
+      <p></p>
+    </section>
+
+    <!-- CONFIRMACIÓN DE ASISTENCIA -->
+<section class="rsvp section-pad">
+  <p class="eyebrow">QUEREMOS CONTAR CONTIGO</p>
+
+  <h2>¿Nos acompañas?</h2>
+
+  <p>
+    Por favor confirma tu asistencia antes del<br>
+    <strong>26 de diciembre de 2026</strong>.
+  </p>
+
+  <!-- BOTÓN QUE ABRE EL FORMULARIO DE GOOGLE -->
+  <a
+    class="rsvp-button"
+    id="confirm"
+    href="https://docs.google.com/forms/d/e/1FAIpQLSd953Kqbv9jxXLpqFU0hiJ1YIBha3_iQF_wKXeyXQ75FURfUA/viewform"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    CONFIRMAR ASISTENCIA <span>↗</span>
+  </a>
+
+  <p class="form-note">
+    ¡Esperamos celebrar contigo!
+  </p>
+</section>
+
+    <!-- PIE DE PÁGINA: cierre de la invitación con los nombres y la fecha. -->
+    <footer class="footer">
+      <img src="assets/sello-r.png" alt="Sello con la R caligráfica" class="footer-seal" loading="lazy">
+      <h2>Adriana <i>&</i> Ricardo</h2>
+      <p>Nos vemos en el comienzo de nuestro para siempre.</p>
+      <p class="footer-date">03 · 01 · 2027</p>
+    </footer>
+
+  </main>
+
+  <!-- JAVASCRIPT: controla las interacciones y animaciones de la invitación. -->
+  <script src="script.js"></script>
+</body>
+</html>

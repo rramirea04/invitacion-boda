@@ -1,0 +1,25 @@
+INVITACIÓN DIGITAL · ADRIANA & RICARDO
+
+Para previsualizar: abre index.html en un navegador moderno.
+
+MÚSICA: el botón superior permite reproducir/pausar la canción. Los navegadores requieren una acción del usuario para iniciar audio.
+
+GOOGLE FORMS: abre script.js y reemplaza el valor vacío de GOOGLE_FORM_URL por el enlace público de tu formulario. El botón de confirmación quedará conectado automáticamente.
+
+DATOS QUE SE CONSERVARON DEL PROYECTO ORIGINAL: fecha 03/01/2027, Chimichagua (Cesar), ceremonia 3:00 p. m., recepción 5:00 p. m. en Remanganagua y fecha límite de confirmación 26/12/2026. La iglesia sigue indicada como por confirmar.
+
+Las fotografías se optimizaron a WebP para que la invitación cargue más rápido.
+
+
+Actualización visual:
+- El sello se desvanece antes de abrirse el sobre.
+- Se reproduce el sobre abierto animado y una tarjeta emerge desde su interior.
+- La invitación aparece después de la secuencia.
+- Nombres y titulares usan caligrafía Allura en tamaño grande.
+- Las fotografías se distribuyen como collage editorial, no como cuadrícula compacta.
+- Para conectar Google Forms, pega el enlace público en GOOGLE_FORM_URL dentro de script.js.
+
+Apertura corregida: el sello desaparece, el sobre se abre y una hoja-boceto con la composición de toda la invitación emerge desde la boca del sobre. La parte inferior permanece oculta tras el frente del sobre mientras sale. El boceto se expande y da paso a la invitación completa.
+
+
+Nueva apertura editorial: se integra el GIF original transparente de apertura del sobre. Una miniatura vertical muestra la composición completa de la invitación (foto de portada, nombres, bienvenida, fecha, galería, eventos, paleta y RSVP) y emerge por delante desde el interior del sobre. La página definitiva se carga antes de desvanecer el boceto para evitar pantalla vacía. Duración aproximada: 9–10 segundos.
