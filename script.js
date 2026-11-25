@@ -382,7 +382,7 @@ if (confirmButton && GOOGLE_FORM_URL.trim()) {
   // Informa al invitado que se abrirá el formulario.
   if (formNote) {
     formNote.textContent =
-      'Se abrirá el formulario seguro de confirmación de asistencia.';
+      'Nos hará muy felices compartir este día contigo. Confirma tu asistencia y la de tu acompañante.';
   }
 
 } else if (confirmButton) {
